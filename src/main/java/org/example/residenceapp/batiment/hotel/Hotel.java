@@ -4,10 +4,12 @@ import org.example.residenceapp.Impot;
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Proprietaire;
 import org.example.residenceapp.batiment.hotel.utils.Etoile;
+import org.example.residenceapp.batiment.immeuble.Appartement;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Hotel extends Batiment {
 
@@ -176,5 +178,21 @@ public class Hotel extends Batiment {
 
         return super.getImpot();
 
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +super.toString()+
+                "nbreEtoiles=" + nbreEtoiles +
+                "nombreChambre=" + nombreChambre +
+                ", chambres=" + chambres.stream().map(Chambre::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                ", suites=" + suites.stream().map(Suite::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                ", piscines=" + piscines.stream().map(Piscine::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                ", spas=" + spas.stream().map(Spa::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                "} ";
     }
 }

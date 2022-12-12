@@ -1,8 +1,11 @@
 package org.example.residenceapp.batiment.hotel;
 
+import org.example.residenceapp.batiment.Proprietaire;
+
 public class Spa {
 
     private Hotel hotel;
+
 
     public Hotel getHotel() {
         return hotel;
@@ -10,5 +13,18 @@ public class Spa {
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
+    }
+
+    public Proprietaire getProprietaire(){
+
+        return hotel.getProprietaire();
+    }
+
+    @Override
+    public String toString() {
+        return "Spa{" +
+                "Nombre d etoiles de l' hotel=" + hotel.getNbreEtoiles() +
+                "Proprietaire  de l' hotel=" + hotel.getProprietaire() +
+                '}';
     }
 }

@@ -7,6 +7,7 @@ import org.example.residenceapp.batiment.magasin.instrument.Instrument;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Magasin extends Batiment {
 
@@ -31,4 +32,11 @@ public class Magasin extends Batiment {
         instruments.add(instrument);
     }
 
+    @Override
+    public String toString() {
+        return "Magasin{" + super.toString()+
+                "instruments=" + instruments.stream().map(Instrument::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                "} ";
+    }
 }

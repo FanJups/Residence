@@ -43,4 +43,13 @@ public abstract class Batiment {
     public double getImpot() {
         return Impot.TAUXA.getValue() * getSurfaceHabitable();
     }
+
+    @Override
+    public String toString() {
+        return "Batiment{" +
+                "adresse='" + adresse + '\'' +
+                ", surfaceHabitable=" + surfaceHabitable +
+                ", proprietaire=" + proprietaire +
+                '}';
+    }
 }

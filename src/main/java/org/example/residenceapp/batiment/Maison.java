@@ -35,4 +35,12 @@ public class Maison extends Batiment {
     public double getImpot() {
         return super.getImpot() + Impot.TAUXB.getValue() * getSurfaceJardin();
     }
+
+    @Override
+    public String toString() {
+        return "Maison{" + super.toString()+
+                "nombrePiece=" + nombrePiece +
+                ", surfaceJardin=" + surfaceJardin +
+                "} ";
+    }
 }

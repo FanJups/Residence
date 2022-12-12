@@ -43,4 +43,13 @@ public class Personne {
     public int hashCode() {
         return Objects.hash(idPersonne);
     }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "idPersonne=" + idPersonne +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                '}';
+    }
 }

@@ -1,12 +1,18 @@
 package org.example.residenceapp.batiment.immeuble;
 
 
+import org.example.residenceapp.batiment.Proprietaire;
 import org.example.residenceapp.batiment.bail.Locataire;
 import org.example.residenceapp.batiment.bail.Location;
 
 public class Appartement extends Location {
 
     private Immeuble immeuble;
+
+    public Appartement() {
+        super(null);
+
+    }
 
     public Appartement(Locataire locataire) {
 
@@ -29,7 +35,7 @@ public class Appartement extends Location {
 
 
     @Override
-    protected void bail(Locataire locataire) {
+    public void bail(Locataire locataire) {
 
         if (immeuble.getProprietaire().getIdPersonne() != locataire.getIdPersonne()) {
 
@@ -40,5 +46,15 @@ public class Appartement extends Location {
             System.out.println("Impossible de faire un bail car le propriétaire et la locataire sont la même personne");
         }
 
+    }
+
+    public Proprietaire getProprietaire(){
+
+        return immeuble.getProprietaire();
+    }
+
+    @Override
+    public String toString() {
+        return "Appartement{" +super.toString()+"} ";
     }
 }

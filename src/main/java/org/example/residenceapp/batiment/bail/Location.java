@@ -18,4 +18,11 @@ public abstract class Location {
     }
 
     protected abstract void bail(Locataire locataire);
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "locataire=" + locataire +
+                '}';
+    }
 }

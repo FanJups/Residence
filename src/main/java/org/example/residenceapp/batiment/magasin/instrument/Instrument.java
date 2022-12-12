@@ -45,4 +45,14 @@ public abstract class Instrument {
     public void setMarque(String marque) {
         this.marque = marque;
     }
+
+    @Override
+    public String toString() {
+        return "Instrument{" +
+                "nom='" + nom + '\'' +
+                ", prixAchat=" + prixAchat +
+                ", prixVente=" + prixVente +
+                ", marque='" + marque + '\'' +
+                '}';
+    }
 }

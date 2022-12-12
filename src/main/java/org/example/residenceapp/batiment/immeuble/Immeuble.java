@@ -2,10 +2,12 @@ package org.example.residenceapp.batiment.immeuble;
 
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Proprietaire;
+import org.example.residenceapp.batiment.magasin.instrument.Instrument;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Immeuble extends Batiment {
 
@@ -40,5 +42,12 @@ public class Immeuble extends Batiment {
         appartements.add(appartement);
     }
 
-
+    @Override
+    public String toString() {
+        return "Immeuble{" +super.toString()+
+                "nombreAppartement=" + nombreAppartement +
+                ", appartements=" + appartements.stream().map(Appartement::toString)
+                .collect(Collectors.joining("\n", "{", "}")) +
+                "} ";
+    }
 }
