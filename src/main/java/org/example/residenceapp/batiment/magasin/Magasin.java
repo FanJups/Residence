@@ -20,6 +20,13 @@ public class Magasin extends Batiment {
 
     }
 
+    public Magasin(String adresse, double surfaceHabitable) {
+
+        super(adresse, surfaceHabitable);
+
+
+    }
+
 
     public List<Instrument> getInstruments() {
         return instruments;

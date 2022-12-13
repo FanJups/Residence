@@ -3,13 +3,14 @@ package org.example.residenceapp;
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Maison;
 import org.example.residenceapp.batiment.Proprietaire;
-import org.example.residenceapp.batiment.hotel.Hotel;
-import org.example.residenceapp.batiment.hotel.Piscine;
-import org.example.residenceapp.batiment.hotel.Spa;
-import org.example.residenceapp.batiment.hotel.Suite;
+import org.example.residenceapp.batiment.bail.Locataire;
+import org.example.residenceapp.batiment.bail.Location;
+import org.example.residenceapp.batiment.hotel.*;
 import org.example.residenceapp.batiment.hotel.utils.Etoile;
+import org.example.residenceapp.batiment.immeuble.Appartement;
 import org.example.residenceapp.batiment.immeuble.Immeuble;
 import org.example.residenceapp.batiment.magasin.Magasin;
+import org.example.residenceapp.batiment.magasin.instrument.Instrument;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.Guitare;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.GuitareAcoustique;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.GuitareElectrique;
@@ -18,8 +19,11 @@ import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.utils.
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
+
+    static Residence residence = new Residence();
 
     public static void main(String[] args) {
 
@@ -32,8 +36,68 @@ public class Main {
 
 
 
+application();
 
 
+
+    }
+
+    public static String description(Object o){
+
+        return o.toString();
+    }
+
+    public static void associationDUnBatimentEtUnProproetaire(Proprietaire proprietaire,Batiment batiment){
+
+        batiment.setProprietaire(proprietaire);
+
+    }
+
+    public static void location(Locataire locataire, Location location){
+
+        location.setLocataire(locataire);
+
+    }
+
+    public static List<Batiment> biensduProprietaire(Proprietaire proprietaire){
+
+        return residence.getBatiments()
+                .stream()
+                .filter(b -> b.getProprietaire().equals(proprietaire))
+                .collect(Collectors.toList());
+    }
+
+    public static List<Appartement> appartementsLoues(Immeuble immeuble){
+
+        return immeuble.getAppartements()
+                .stream()
+                .filter(a -> a.getLocataire()!=null)
+                .collect(Collectors.toList());
+    }
+
+    public static List<Suite> suitesLoues(Hotel hotel){
+
+        return hotel.getSuites()
+                .stream()
+                .filter(s -> s.getLocataire()!=null)
+                .collect(Collectors.toList());
+    }
+
+    public static List<Chambre> chambresLoues(Hotel hotel){
+
+        return hotel.getChambres()
+                .stream()
+                .filter(c -> c.getLocataire()!=null)
+                .collect(Collectors.toList());
+    }
+
+    public static double impotLocal(Batiment batiment){
+
+        return batiment.getImpot();
+    }
+
+
+    public static void application(){
 
         Batiment im1 = new Immeuble("75000 Paris", 3040.0, new Proprietaire("Xavier", "Paul"), 10);
         Batiment im2 = new Immeuble("75000 Paris", 500.0, new Proprietaire("Soleiman", "Rabab"), 10);
@@ -94,7 +158,6 @@ public class Main {
         m.addInstrument(f);
 
         m.addInstrument(f1);
-
 
 
 

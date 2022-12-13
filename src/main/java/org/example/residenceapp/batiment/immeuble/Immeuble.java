@@ -21,6 +21,11 @@ public class Immeuble extends Batiment {
         this.nombreAppartement = nombreAppartement;
     }
 
+    public Immeuble(String adresse, double surfaceHabitable,  int nombreAppartement) {
+        super(adresse, surfaceHabitable);
+        this.nombreAppartement = nombreAppartement;
+    }
+
     public int getNombreAppartement() {
         return nombreAppartement;
     }

@@ -10,4 +10,9 @@ public class Hautbois extends InstrumentAVent {
 
     }
 
+    @Override
+    public String toString() {
+
+        return "Hautbois{"+ super.toString()+"} ";
+    }
 }

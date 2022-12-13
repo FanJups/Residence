@@ -40,4 +40,12 @@ public class GuitareAcoustique extends Guitare {
 
 
     }
+
+    @Override
+    public String toString() {
+        return "GuitareAcoustique{"+ super.toString() +
+                "mainHabile=" + mainHabile +
+                ", tirant=" + tirant +
+                "} " ;
+    }
 }

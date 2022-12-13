@@ -19,4 +19,11 @@ public abstract class Guitare extends InstrumentACorde {
     public void setMateriauCordeGuitare(MateriauCordeGuitare materiauCordeGuitare) {
         this.materiauCordeGuitare = materiauCordeGuitare;
     }
+
+    @Override
+    public String toString() {
+        return "Guitare{"+ super.toString() +
+                "materiauCordeGuitare=" + materiauCordeGuitare +
+                "} " ;
+    }
 }

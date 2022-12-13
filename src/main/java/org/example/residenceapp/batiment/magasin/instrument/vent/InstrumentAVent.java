@@ -21,4 +21,11 @@ public abstract class InstrumentAVent extends Instrument {
     public void setTypeVent(TypeInstrumentAVent typeVent) {
         this.typeVent = typeVent;
     }
+
+    @Override
+    public String toString() {
+        return "InstrumentAVent{"+ super.toString() +
+                "typeVent=" + typeVent +
+                "} " ;
+    }
 }

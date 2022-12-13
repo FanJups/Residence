@@ -27,4 +27,12 @@ public class GuitareElectrique extends Guitare {
     public void setPedalesEffetsSonores(boolean pedalesEffetsSonores) {
         this.pedalesEffetsSonores = pedalesEffetsSonores;
     }
+
+    @Override
+    public String toString() {
+        return "GuitareElectrique{"+ super.toString() +
+                "amplificateurInclus=" + amplificateurInclus +
+                ", pedalesEffetsSonores=" + pedalesEffetsSonores +
+                "} " ;
+    }
 }

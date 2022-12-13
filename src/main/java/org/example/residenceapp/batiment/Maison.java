@@ -14,6 +14,14 @@ public class Maison extends Batiment {
 
     }
 
+    public Maison(String adresse, double surfaceHabitable,int nombrePiece, double surfaceJardin) {
+
+        super(adresse, surfaceHabitable);
+        this.nombrePiece = nombrePiece;
+        this.surfaceJardin = surfaceJardin;
+
+    }
+
     public int getNombrePiece() {
         return nombrePiece;
     }

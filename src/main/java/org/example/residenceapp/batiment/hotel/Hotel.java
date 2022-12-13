@@ -33,6 +33,12 @@ public class Hotel extends Batiment {
         this.nbreEtoiles = nbreEtoiles;
     }
 
+    public Hotel(String adresse, double surfaceHabitable,  int nombreChambre, Etoile nbreEtoiles) {
+        super(adresse, surfaceHabitable);
+        setNombreChambre(nombreChambre);
+        this.nbreEtoiles = nbreEtoiles;
+    }
+
     public int getNombreChambre() {
         return nombreChambre;
     }
@@ -47,6 +53,7 @@ public class Hotel extends Batiment {
             // TODO: Ajouter Exception
 
             System.out.println("L'Hôtel doit avoir minimum une chambre.");
+
 
         }
 

@@ -10,4 +10,8 @@ public class Clarinette extends InstrumentAVent {
 
     }
 
+    @Override
+    public String toString() {
+        return "Clarinette{"+ super.toString()+"} ";
+    }
 }

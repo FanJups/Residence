@@ -37,4 +37,12 @@ public class PianoDroit extends Piano {
     public void setTypeCordesPianoDroit(TypeCordesPianoDroit typeCordesPianoDroit) {
         this.typeCordesPianoDroit = typeCordesPianoDroit;
     }
+
+    @Override
+    public String toString() {
+        return "PianoDroit{"+ super.toString() +
+                "typeCordesPianoDroit=" + typeCordesPianoDroit +
+                ", etreDoteSilencieux=" + etreDoteSilencieux +
+                "} " ;
+    }
 }

@@ -25,4 +25,11 @@ public class PianoQueue extends Piano {
     public void setTaille(TaillePianoQueue taille) {
         this.taille = taille;
     }
+
+    @Override
+    public String toString() {
+        return "PianoQueue{"+ super.toString() +
+                "taille=" + taille +
+                "} ";
+    }
 }

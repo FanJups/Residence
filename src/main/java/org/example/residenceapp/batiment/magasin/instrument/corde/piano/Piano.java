@@ -23,4 +23,11 @@ public abstract class Piano extends InstrumentACorde {
     public void setNombreTouche(int nombreTouche) {
         this.nombreTouche = nombreTouche;
     }
+
+    @Override
+    public String toString() {
+        return "Piano{"+ super.toString() +
+                "nombreTouche=" + nombreTouche +
+                "} ";
+    }
 }
