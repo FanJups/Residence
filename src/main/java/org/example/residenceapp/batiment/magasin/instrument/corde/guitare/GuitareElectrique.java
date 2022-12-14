@@ -30,9 +30,16 @@ public class GuitareElectrique extends Guitare {
 
     @Override
     public String toString() {
-        return "GuitareElectrique{"+ super.toString() +
-                "amplificateurInclus=" + amplificateurInclus +
-                ", pedalesEffetsSonores=" + pedalesEffetsSonores +
-                "} " ;
+        return "\n" +
+                "GuitareElectrique {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "amplificateurInclus = " + amplificateurInclus +
+                "\n" +
+                " pedalesEffetsSonores = " + pedalesEffetsSonores +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

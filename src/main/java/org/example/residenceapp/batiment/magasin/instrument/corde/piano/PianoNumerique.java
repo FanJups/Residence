@@ -49,9 +49,16 @@ public class PianoNumerique extends Piano {
 
     @Override
     public String toString() {
-        return "PianoNumerique{"+ super.toString() +
-                "avoirToucherLourd=" + avoirToucherLourd +
-                ", qualiteEchantillonnage=" + qualiteEchantillonnage +
-                "} " ;
+        return "\n" +
+                "PianoNumerique {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "avoirToucherLourd = " + avoirToucherLourd +
+                "\n" +
+                " qualiteEchantillonnage = " + qualiteEchantillonnage +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

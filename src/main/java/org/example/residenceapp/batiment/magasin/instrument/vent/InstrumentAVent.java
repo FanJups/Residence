@@ -24,8 +24,14 @@ public abstract class InstrumentAVent extends Instrument {
 
     @Override
     public String toString() {
-        return "InstrumentAVent{"+ super.toString() +
-                "typeVent=" + typeVent +
-                "} " ;
+        return "\n" +
+                "InstrumentAVent {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "typeVent = " + typeVent +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

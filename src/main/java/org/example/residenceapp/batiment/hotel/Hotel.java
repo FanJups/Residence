@@ -4,7 +4,6 @@ import org.example.residenceapp.Impot;
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Proprietaire;
 import org.example.residenceapp.batiment.hotel.utils.Etoile;
-import org.example.residenceapp.batiment.immeuble.Appartement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class Hotel extends Batiment {
         this.nbreEtoiles = nbreEtoiles;
     }
 
-    public Hotel(String adresse, double surfaceHabitable,  int nombreChambre, Etoile nbreEtoiles) {
+    public Hotel(String adresse, double surfaceHabitable, int nombreChambre, Etoile nbreEtoiles) {
         super(adresse, surfaceHabitable);
         setNombreChambre(nombreChambre);
         this.nbreEtoiles = nbreEtoiles;
@@ -50,10 +49,8 @@ public class Hotel extends Batiment {
             this.nombreChambre = nombreChambre;
 
         } else {
-            // TODO: Ajouter Exception
 
-            System.out.println("L'Hôtel doit avoir minimum une chambre.");
-
+            throw new RuntimeException("L'Hôtel doit avoir minimum une chambre.");
 
         }
 
@@ -76,9 +73,8 @@ public class Hotel extends Batiment {
             chambres.add(chambre);
         } else {
 
-            // TODO: Ajouter Exception
+            throw new RuntimeException("Impossible d'ajouter une chambre car le quota max est atteint");
 
-            System.out.println("Impossible d'ajouter une chambre car le quota max est atteint");
 
         }
 
@@ -99,7 +95,8 @@ public class Hotel extends Batiment {
             suites.add(suite);
         } else {
 
-            System.out.println("Impossible d'ajouter une suite car cet hôtel n'a pas 5 étoiles.");
+            throw new RuntimeException("Impossible d'ajouter une suite car cet hôtel n'a pas 5 étoiles.");
+
         }
 
 
@@ -116,7 +113,10 @@ public class Hotel extends Batiment {
         if (this.nbreEtoiles.equals(Etoile.UN)
                 || this.nbreEtoiles.equals(Etoile.DEUX)
                 || this.nbreEtoiles.equals(Etoile.TROIS)) {
-            System.out.println("Impossible d'ajouter une piscine car cet hôtel n'a pas minimum 4 étoiles.");
+
+            throw new RuntimeException("Impossible d'ajouter une piscine car cet hôtel n'a pas minimum 4 étoiles.");
+
+
 
         } else {
 
@@ -129,8 +129,10 @@ public class Hotel extends Batiment {
                     piscines.add(piscine);
                 } else {
 
-                    System.out.println("Impossible d'ajouter une autre piscine " +
+                    throw new RuntimeException("Impossible d'ajouter une autre piscine " +
                             "car cet hôtel 4 étoiles doit contenir au max une piscine.");
+
+
                 }
             }
 
@@ -189,17 +191,36 @@ public class Hotel extends Batiment {
 
     @Override
     public String toString() {
-        return "Hotel{" +super.toString()+
-                "nbreEtoiles=" + nbreEtoiles +
-                "nombreChambre=" + nombreChambre +
-                ", chambres=" + chambres.stream().map(Chambre::toString)
+        return "\n" +
+                "Hotel {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "nbreEtoiles = " + nbreEtoiles +
+                "\n" +
+                "nombreChambre théorique = " + nombreChambre +
+                "\n" +
+                "nombreChambre réel = " + chambres.size() +
+                "\n" +
+                " chambres = " + chambres.stream().map(Chambre::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                ", suites=" + suites.stream().map(Suite::toString)
+                "\n" +
+                "nombre de suites = " + suites.size() +
+                "\n" +
+                " suites = " + suites.stream().map(Suite::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                ", piscines=" + piscines.stream().map(Piscine::toString)
+                "\n" +
+                "nombre de piscines = " + piscines.size() +
+                "\n" +
+                " piscines =" + piscines.stream().map(Piscine::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                ", spas=" + spas.stream().map(Spa::toString)
+                "\n" +
+                "nombre de spas = " + spas.size() +
+                "\n" +
+                " spas = " + spas.stream().map(Spa::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                "} ";
+                "\n" +
+                "} " +
+                "\n";
     }
 }

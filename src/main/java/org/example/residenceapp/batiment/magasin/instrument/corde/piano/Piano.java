@@ -26,8 +26,14 @@ public abstract class Piano extends InstrumentACorde {
 
     @Override
     public String toString() {
-        return "Piano{"+ super.toString() +
-                "nombreTouche=" + nombreTouche +
-                "} ";
+        return "\n" +
+                "Piano {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "nombreTouche = " + nombreTouche +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

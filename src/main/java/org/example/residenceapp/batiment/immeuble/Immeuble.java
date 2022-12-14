@@ -2,7 +2,6 @@ package org.example.residenceapp.batiment.immeuble;
 
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Proprietaire;
-import org.example.residenceapp.batiment.magasin.instrument.Instrument;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ public class Immeuble extends Batiment {
         this.nombreAppartement = nombreAppartement;
     }
 
-    public Immeuble(String adresse, double surfaceHabitable,  int nombreAppartement) {
+    public Immeuble(String adresse, double surfaceHabitable, int nombreAppartement) {
         super(adresse, surfaceHabitable);
         this.nombreAppartement = nombreAppartement;
     }
@@ -49,10 +48,17 @@ public class Immeuble extends Batiment {
 
     @Override
     public String toString() {
-        return "Immeuble{" +super.toString()+
-                "nombreAppartement=" + nombreAppartement +
-                ", appartements=" + appartements.stream().map(Appartement::toString)
+        return "\n" +
+                "Immeuble {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "nombreAppartement = " + nombreAppartement +
+                "\n" +
+                "appartements = " + appartements.stream().map(Appartement::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                "} ";
+                "\n" +
+                "} " +
+                "\n";
     }
 }

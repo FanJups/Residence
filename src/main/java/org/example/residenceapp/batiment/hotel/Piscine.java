@@ -14,16 +14,21 @@ public class Piscine {
         this.hotel = hotel;
     }
 
-    public Proprietaire getProprietaire(){
+    public Proprietaire getProprietaire() {
 
         return hotel.getProprietaire();
     }
 
     @Override
     public String toString() {
-        return "Piscine{" +
-                "Nombre d etoiles de l' hotel=" + hotel.getNbreEtoiles() +
-                "Proprietaire  de l' hotel=" + hotel.getProprietaire() +
-                '}';
+        return "\n" +
+                "Piscine {" +
+                "\n" +
+                "Nombre d etoiles de l' hotel = " + hotel.getNbreEtoiles() +
+                "\n" +
+                "Proprietaire  de l' hotel = " + hotel.getProprietaire() +
+                "\n" +
+                '}' +
+                "\n";
     }
 }

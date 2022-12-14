@@ -43,9 +43,16 @@ public class GuitareAcoustique extends Guitare {
 
     @Override
     public String toString() {
-        return "GuitareAcoustique{"+ super.toString() +
-                "mainHabile=" + mainHabile +
-                ", tirant=" + tirant +
-                "} " ;
+        return "\n" +
+                "GuitareAcoustique {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "mainHabile = " + mainHabile +
+                "\n" +
+                " tirant = " + tirant +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

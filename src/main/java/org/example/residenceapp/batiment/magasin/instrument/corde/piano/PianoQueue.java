@@ -28,8 +28,14 @@ public class PianoQueue extends Piano {
 
     @Override
     public String toString() {
-        return "PianoQueue{"+ super.toString() +
-                "taille=" + taille +
-                "} ";
+        return "\n" +
+                "PianoQueue {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "taille = " + taille +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

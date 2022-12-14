@@ -46,13 +46,24 @@ public class Suite extends Location {
 
     }
 
-    public Proprietaire getProprietaire(){
+    public Proprietaire getProprietaire() {
 
         return hotel.getProprietaire();
     }
 
     @Override
     public String toString() {
-        return "Suite{" +super.toString()+"} ";
+        return "\n" +
+                "Suite {" +
+                "\n" +
+                "Nombre d etoiles de l' hotel = " + hotel.getNbreEtoiles() +
+                "\n" +
+                "Proprietaire  de l' hotel = " + hotel.getProprietaire() +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "} " +
+                "\n";
     }
+
 }

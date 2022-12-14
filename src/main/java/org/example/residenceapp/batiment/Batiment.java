@@ -61,11 +61,18 @@ public abstract class Batiment {
 
     @Override
     public String toString() {
-        return "Batiment{" +
-                "adresse='" + adresse + '\'' +
-                ", surfaceHabitable=" + surfaceHabitable +
-                ", proprietaire=" + proprietaire +
-                ", impot=" + getImpot() +
-                '}';
+        return "\n" +
+                "Batiment {" +
+                "\n" +
+                "adresse = '" + adresse + '\'' +
+                "\n" +
+                " surfaceHabitable = " + surfaceHabitable +
+                "\n" +
+                " proprietaire = " + proprietaire +
+                "\n" +
+                " impot = " + getImpot() +
+                "\n" +
+                '}' +
+                "\n";
     }
 }

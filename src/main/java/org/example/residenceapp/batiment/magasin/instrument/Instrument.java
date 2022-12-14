@@ -48,11 +48,19 @@ public abstract class Instrument {
 
     @Override
     public String toString() {
-        return "Instrument{" +
-                "nom='" + nom + '\'' +
-                ", prixAchat=" + prixAchat +
-                ", prixVente=" + prixVente +
-                ", marque='" + marque + '\'' +
-                '}';
+        return "\n" +
+                "Instrument {" +
+                "\n" +
+                "nom = '" + nom + '\'' +
+                "\n" +
+                " prixAchat = " + prixAchat +
+                "\n" +
+                " prixVente = " + prixVente +
+                "\n" +
+                " marque = '" + marque + '\'' +
+                "\n" +
+                '}' +
+                "\n";
     }
+
 }

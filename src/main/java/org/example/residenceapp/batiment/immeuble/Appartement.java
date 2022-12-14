@@ -48,13 +48,23 @@ public class Appartement extends Location {
 
     }
 
-    public Proprietaire getProprietaire(){
+    public Proprietaire getProprietaire() {
 
         return immeuble.getProprietaire();
     }
 
-    @Override
-    public String toString() {
-        return "Appartement{" +super.toString()+"} ";
+
+    public String toStringq() {
+        return "\n" +
+                "Appartement {" +
+                "\n" +
+                "Proprietaire  de l' immeuble = " + immeuble.getProprietaire() +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "} " +
+                "\n";
     }
+
+
 }

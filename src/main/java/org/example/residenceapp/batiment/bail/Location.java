@@ -21,8 +21,12 @@ public abstract class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "locataire=" + locataire +
-                '}';
+        return "\n" +
+                "Location {" +
+                "\n" +
+                "locataire = " + locataire +
+                "\n" +
+                '}' +
+                "\n";
     }
 }

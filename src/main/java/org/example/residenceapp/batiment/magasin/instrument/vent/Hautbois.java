@@ -13,6 +13,12 @@ public class Hautbois extends InstrumentAVent {
     @Override
     public String toString() {
 
-        return "Hautbois{"+ super.toString()+"} ";
+        return "\n" +
+                "Hautbois {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

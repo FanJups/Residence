@@ -22,8 +22,14 @@ public abstract class Guitare extends InstrumentACorde {
 
     @Override
     public String toString() {
-        return "Guitare{"+ super.toString() +
-                "materiauCordeGuitare=" + materiauCordeGuitare +
-                "} " ;
+        return "\n" +
+                "Guitare {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "materiauCordeGuitare = " + materiauCordeGuitare +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

@@ -13,6 +13,12 @@ public class FluteTraversiere extends InstrumentAVent {
     @Override
     public String toString() {
 
-        return "FluteTraversiere{"+ super.toString()+"} ";
+        return "\n" +
+                "FluteTraversiere {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

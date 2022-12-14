@@ -15,16 +15,21 @@ public class Spa {
         this.hotel = hotel;
     }
 
-    public Proprietaire getProprietaire(){
+    public Proprietaire getProprietaire() {
 
         return hotel.getProprietaire();
     }
 
     @Override
     public String toString() {
-        return "Spa{" +
-                "Nombre d etoiles de l' hotel=" + hotel.getNbreEtoiles() +
-                "Proprietaire  de l' hotel=" + hotel.getProprietaire() +
-                '}';
+        return "\n" +
+                "Spa {" +
+                "\n" +
+                "Nombre d etoiles de l' hotel = " + hotel.getNbreEtoiles() +
+                "\n" +
+                "Proprietaire  de l' hotel = " + hotel.getProprietaire() +
+                "\n" +
+                '}' +
+                "\n";
     }
 }

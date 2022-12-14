@@ -40,9 +40,16 @@ public class PianoDroit extends Piano {
 
     @Override
     public String toString() {
-        return "PianoDroit{"+ super.toString() +
-                "typeCordesPianoDroit=" + typeCordesPianoDroit +
-                ", etreDoteSilencieux=" + etreDoteSilencieux +
-                "} " ;
+        return "\n" +
+                "PianoDroit {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "typeCordesPianoDroit = " + typeCordesPianoDroit +
+                "\n" +
+                ", etreDoteSilencieux = " + etreDoteSilencieux +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

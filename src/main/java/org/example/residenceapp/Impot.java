@@ -6,7 +6,6 @@ public enum Impot {
 
     private double value;
 
-
     private Impot(double value) {
         this.value = value;
     }
@@ -14,4 +13,6 @@ public enum Impot {
     public double getValue() {
         return value;
     }
+
+
 }

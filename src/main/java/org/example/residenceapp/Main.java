@@ -10,14 +10,10 @@ import org.example.residenceapp.batiment.hotel.utils.Etoile;
 import org.example.residenceapp.batiment.immeuble.Appartement;
 import org.example.residenceapp.batiment.immeuble.Immeuble;
 import org.example.residenceapp.batiment.magasin.Magasin;
-import org.example.residenceapp.batiment.magasin.instrument.Instrument;
-import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.Guitare;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.GuitareAcoustique;
-import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.GuitareElectrique;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.utils.MainHabile;
 import org.example.residenceapp.batiment.magasin.instrument.corde.guitare.utils.MateriauCordeGuitare;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,39 +23,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // TODO: Implemeter tostring equals si besoin
-        //TODO: Ne pas ajouter le meme objet 2 fois dans la liste
-
-
-
-        //TODO: Continuer ici
-
-
-
-application();
-
-
+        application();
 
     }
 
-    public static String description(Object o){
+    public static String description(Object o) {
 
         return o.toString();
     }
 
-    public static void associationDUnBatimentEtUnProproetaire(Proprietaire proprietaire,Batiment batiment){
+    public static void associationDUnBatimentEtUnProproetaire(Proprietaire proprietaire, Batiment batiment) {
 
         batiment.setProprietaire(proprietaire);
 
     }
 
-    public static void location(Locataire locataire, Location location){
+    public static void location(Locataire locataire, Location location) {
 
         location.setLocataire(locataire);
 
     }
 
-    public static List<Batiment> biensduProprietaire(Proprietaire proprietaire){
+    public static List<Batiment> biensduProprietaire(Proprietaire proprietaire) {
 
         return residence.getBatiments()
                 .stream()
@@ -67,59 +52,59 @@ application();
                 .collect(Collectors.toList());
     }
 
-    public static List<Appartement> appartementsLoues(Immeuble immeuble){
+    public static List<Appartement> appartementsLoues(Immeuble immeuble) {
 
         return immeuble.getAppartements()
                 .stream()
-                .filter(a -> a.getLocataire()!=null)
+                .filter(a -> a.getLocataire() != null)
                 .collect(Collectors.toList());
     }
 
-    public static List<Suite> suitesLoues(Hotel hotel){
+    public static List<Suite> suitesLoues(Hotel hotel) {
 
         return hotel.getSuites()
                 .stream()
-                .filter(s -> s.getLocataire()!=null)
+                .filter(s -> s.getLocataire() != null)
                 .collect(Collectors.toList());
     }
 
-    public static List<Chambre> chambresLoues(Hotel hotel){
+    public static List<Chambre> chambresLoues(Hotel hotel) {
 
         return hotel.getChambres()
                 .stream()
-                .filter(c -> c.getLocataire()!=null)
+                .filter(c -> c.getLocataire() != null)
                 .collect(Collectors.toList());
     }
 
-    public static double impotLocal(Batiment batiment){
+    public static double impotLocal(Batiment batiment) {
 
         return batiment.getImpot();
     }
 
 
-    public static void application(){
+    public static void application() {
 
-        Batiment im1 = new Immeuble("75000 Paris", 3040.0, new Proprietaire("Xavier", "Paul"), 10);
-        Batiment im2 = new Immeuble("75000 Paris", 500.0, new Proprietaire("Soleiman", "Rabab"), 10);
-        Batiment im3 = new Immeuble("75000 Paris", 8000.0, new Proprietaire("Marc", "Jules"), 15);
+        Immeuble im1 = new Immeuble("75000 Paris", 3040.0, new Proprietaire("Xavier", "Paul"), 10);
+        Immeuble im2 = new Immeuble("75000 Paris", 500.0, new Proprietaire("Soleiman", "Rabab"), 10);
+        Immeuble im3 = new Immeuble("75000 Paris", 8000.0, new Proprietaire("Marc", "Jules"), 15);
 
-        Batiment m1 = new Maison("75000 Paris", 800.0, new Proprietaire("Seb", "Jules"), 5,50);
-        Batiment m2 = new Maison("75000 Paris", 50.0, new Proprietaire("Seb", "Jules"), 3,58);
-        Batiment m3 = new Maison("75000 Paris", 400.0, new Proprietaire("Seb", "Jules"), 4,25);
-        Batiment m4 = new Maison("75000 Paris", 100.0, new Proprietaire("Seb", "Jules"), 8,30);
-        Batiment m5 = new Maison("75000 Paris", 200.0, new Proprietaire("Seb", "Jules"), 10,20);
+        Maison m1 = new Maison("75000 Paris", 800.0, new Proprietaire("Seb", "Jules"), 5, 50);
+        Maison m2 = new Maison("76000 Rouen", 50.0, new Proprietaire("Saul", "Fernandes"), 3, 58);
+        Maison m3 = new Maison("76100 Saint Severs", 400.0, new Proprietaire("Chris", "Felix"), 4, 25);
+        Maison m4 = new Maison("76800 Rouvray", 100.0, new Proprietaire("Seb", "Jules"), 8, 30);
+        Maison m5 = new Maison("75000 Paris", 200.0, new Proprietaire("Seb", "Jules"), 10, 20);
 
 
         Hotel h1 = new Hotel("Orly", 409, new Proprietaire("Bastien", "Sass"), 45, Etoile.DEUX);
         Hotel h2 = new Hotel("Roissy", 240, new Proprietaire("Juliette", "Henroy"), 20, Etoile.DEUX);
 
 
-
         Hotel h3 = new Hotel("Nantes", 4000, new Proprietaire("Ben", "Soufiane"), 45, Etoile.CINQ);
 
-        Piscine p1 =new Piscine();
-        Piscine p2 =new Piscine();
-        Piscine p3 =new Piscine();
+        Piscine p1 = new Piscine();
+        Piscine p2 = new Piscine();
+        Piscine p3 = new Piscine();
+
 
         h3.addPiscine(p1);
         h3.addPiscine(p2);
@@ -137,29 +122,29 @@ application();
         h3.addSuite(s4);
         h3.addSuite(s5);
 
-        System.out.println(h3);
-
-
 
         Hotel h4 = new Hotel("Rouen", 2400, new Proprietaire("Jups", "Fan"), 20, Etoile.QUATRE);
 
-        for(int i=0;i<7;i++){
+        for (int i = 0; i < 7; i++) {
 
             h4.addSpa(new Spa());
         }
 
         Magasin m = new Magasin("", 2345, new Proprietaire("w", "f"));
 
-        Guitare f = new GuitareAcoustique("", 90, 100, "Marque", 80, 10, MateriauCordeGuitare.BOYAU, MainHabile.DROITIER, 2);
+        GuitareAcoustique guitareAcoustique = new GuitareAcoustique("", 90, 100, "Marque", 80, 10, MateriauCordeGuitare.BOYAU, MainHabile.DROITIER, 2);
 
-        Guitare f1 = new GuitareAcoustique("", 90, 100, "Marque", 80, 10, MateriauCordeGuitare.BOYAU, MainHabile.DROITIER, 2);
-
-
-        m.addInstrument(f);
-
-        m.addInstrument(f1);
+        GuitareAcoustique guitareAcoustique1 = new GuitareAcoustique("", 90, 100, "Marque", 80, 10, MateriauCordeGuitare.BOYAU, MainHabile.DROITIER, 2);
 
 
+        m.addInstrument(guitareAcoustique);
+
+        m.addInstrument(guitareAcoustique1);
+
+        System.out.println("---------------------residence----------------------");
+
+
+        System.out.println(residence);
 
     }
 

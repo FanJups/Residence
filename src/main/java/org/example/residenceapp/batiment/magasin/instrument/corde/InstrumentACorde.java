@@ -33,9 +33,16 @@ public abstract class InstrumentACorde extends Instrument {
 
     @Override
     public String toString() {
-        return "InstrumentACorde{"+ super.toString() +
-                "longueur=" + longueur +
-                ", largeur=" + largeur +
-                "} " ;
+        return "\n" +
+                "InstrumentACorde {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "longueur = " + longueur +
+                "\n" +
+                " largeur = " + largeur +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

@@ -25,4 +25,8 @@ public enum Etoile {
         return stars;
     }
 
+    @Override
+    public String toString() {
+        return getStars();
+    }
 }

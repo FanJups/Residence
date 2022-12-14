@@ -41,9 +41,17 @@ public class Magasin extends Batiment {
 
     @Override
     public String toString() {
-        return "Magasin{" + super.toString()+
-                "instruments=" + instruments.stream().map(Instrument::toString)
+        return "\n" +
+                "Magasin {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "nombre d'instruments = " + instruments.size() +
+                "\n" +
+                "instruments = " + instruments.stream().map(Instrument::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                "} ";
+                "\n" +
+                "} " +
+                "\n";
     }
 }

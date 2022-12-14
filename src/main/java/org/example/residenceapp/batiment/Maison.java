@@ -14,7 +14,7 @@ public class Maison extends Batiment {
 
     }
 
-    public Maison(String adresse, double surfaceHabitable,int nombrePiece, double surfaceJardin) {
+    public Maison(String adresse, double surfaceHabitable, int nombrePiece, double surfaceJardin) {
 
         super(adresse, surfaceHabitable);
         this.nombrePiece = nombrePiece;
@@ -46,9 +46,16 @@ public class Maison extends Batiment {
 
     @Override
     public String toString() {
-        return "Maison{" + super.toString()+
-                "nombrePiece=" + nombrePiece +
-                ", surfaceJardin=" + surfaceJardin +
-                "} ";
+        return "\n" +
+                "Maison {" +
+                "\n" +
+                super.toString() +
+                "\n" +
+                "nombrePiece = " + nombrePiece +
+                "\n" +
+                "surfaceJardin = " + surfaceJardin +
+                "\n" +
+                "} " +
+                "\n";
     }
 }

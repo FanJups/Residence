@@ -1,7 +1,6 @@
 package org.example.residenceapp;
 
 import org.example.residenceapp.batiment.Batiment;
-import org.example.residenceapp.batiment.immeuble.Appartement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +24,15 @@ public class Residence {
 
     @Override
     public String toString() {
-        return "Residence{" +
-                "batiments=" + batiments.stream().map(Batiment::toString)
+        return "\n" +
+                "Residence {" +
+                "\n" +
+                "nombre de bâtiments = " + batiments.size() +
+                "\n" +
+                "batiments = " + batiments.stream().map(Batiment::toString)
                 .collect(Collectors.joining("\n", "{", "}")) +
-                '}';
+                "\n" +
+                '}' +
+                "\n";
     }
 }
