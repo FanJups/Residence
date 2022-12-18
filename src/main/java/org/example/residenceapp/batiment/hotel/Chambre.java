@@ -39,11 +39,12 @@ public class Chambre extends Location {
 
         if (hotel.getProprietaire().getIdPersonne() != locataire.getIdPersonne()) {
 
-            super.setLocataire(locataire);
+            setLocataire(locataire);
 
         } else {
+            throw  new RuntimeException("Impossible de faire un bail car le propriétaire et la locataire sont la même personne");
 
-            System.out.println("Impossible de faire un bail car le propriétaire et la locataire sont la même personne");
+
         }
 
     }

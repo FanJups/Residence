@@ -4,7 +4,6 @@ import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Maison;
 import org.example.residenceapp.batiment.Proprietaire;
 import org.example.residenceapp.batiment.bail.Locataire;
-import org.example.residenceapp.batiment.bail.Location;
 import org.example.residenceapp.batiment.hotel.*;
 import org.example.residenceapp.batiment.hotel.utils.Etoile;
 import org.example.residenceapp.batiment.immeuble.Appartement;
@@ -41,7 +40,7 @@ public class Main {
 
         menu();
 
-        //application();
+        application();
 
     }
 
@@ -56,11 +55,6 @@ public class Main {
 
     }
 
-    public static void location(Locataire locataire, Location location) {
-
-        location.setLocataire(locataire);
-
-    }
 
     public static List<Batiment> biensduProprietaire(Proprietaire proprietaire) {
 
@@ -78,26 +72,23 @@ public class Main {
                 .collect(Collectors.toList());
     }
 
-    public static List<Suite> suitesLoues(Hotel hotel) {
+    public static List<Suite> suitesDisponibles(Hotel hotel) {
 
         return hotel.getSuites()
                 .stream()
-                .filter(s -> s.getLocataire() != null)
+                .filter(s -> s.getLocataire() == null)
                 .collect(Collectors.toList());
     }
 
-    public static List<Chambre> chambresLoues(Hotel hotel) {
+    public static List<Chambre> chambresDisponibles(Hotel hotel) {
 
         return hotel.getChambres()
                 .stream()
-                .filter(c -> c.getLocataire() != null)
+                .filter(c -> c.getLocataire() == null)
                 .collect(Collectors.toList());
     }
 
-    public static double impotLocal(Batiment batiment) {
 
-        return batiment.getImpot();
-    }
 
 
     public static void application() {
@@ -393,7 +384,6 @@ public class Main {
                                     System.out.println("3 : Piano numérique");
 
 
-
                                     String instruCordePianoString;
 
                                     do {
@@ -553,7 +543,7 @@ public class Main {
 
                                             int instruCordePianoDroit = Integer.parseInt(instruCordePianoDroitString);
 
-                                            switch (instruCordePianoDroit){
+                                            switch (instruCordePianoDroit) {
 
                                                 case 1:
                                                     //PianoDroit(String nom, double prixAchat, double prixVente, String marque, double longueur, double largeur,
@@ -629,10 +619,9 @@ public class Main {
                                                     System.out.println("Nombre de touches personnalisé");
 
 
-
                                                     PianoDroit pianoDroit2 = new PianoDroit();
 
-                                                    menuCreationPianoNbreTouchePeronnalise(pianoDroit2,sc);
+                                                    menuCreationPianoNbreTouchePeronnalise(pianoDroit2, sc);
 
                                                     System.out.println("Type de cordes:");
 
@@ -714,7 +703,7 @@ public class Main {
 
                                             int instruCordePianoNum = Integer.parseInt(instruCordePianoNumString);
 
-                                            switch (instruCordePianoNum){
+                                            switch (instruCordePianoNum) {
 
                                                 case 1:
 
@@ -878,7 +867,7 @@ public class Main {
 
                                             GuitareAcoustique guitareAcoustique = new GuitareAcoustique();
 
-                                            menuCreationGuitareAcoustique(guitareAcoustique,sc);
+                                            menuCreationGuitareAcoustique(guitareAcoustique, sc);
 
                                             instruments.add(guitareAcoustique);
 
@@ -892,7 +881,7 @@ public class Main {
 
                                             GuitareElectrique guitareElectrique = new GuitareElectrique();
 
-                                            menuCreationGuitareElectrique(guitareElectrique,sc);
+                                            menuCreationGuitareElectrique(guitareElectrique, sc);
 
                                             instruments.add(guitareElectrique);
 
@@ -934,14 +923,14 @@ public class Main {
                                 case 1:
                                     System.out.println("Hautbois");
 
-                                    String nom = null,marque = null;
-                                    double prixAchat = 0,prixVente = 0;
+                                    String nom = null, marque = null;
+                                    double prixAchat = 0, prixVente = 0;
 
                                     Hautbois h = new Hautbois();
 
-                                    menuCreationInstrumentVent(nom,prixAchat,prixVente,marque,sc,h);
+                                    menuCreationInstrumentVent(nom, prixAchat, prixVente, marque, sc, h);
 
-                                    Hautbois hautbois = new Hautbois(h.getNom(),h.getPrixAchat(),h.getPrixVente(),h.getMarque());
+                                    Hautbois hautbois = new Hautbois(h.getNom(), h.getPrixAchat(), h.getPrixVente(), h.getMarque());
 
                                     instruments.add(hautbois);
 
@@ -953,15 +942,15 @@ public class Main {
 
                                     System.out.println("Clarinette");
 
-                                    String nom2 = null,marque2 = null;
-                                    double prixAchat2 = 0,prixVente2 = 0;
+                                    String nom2 = null, marque2 = null;
+                                    double prixAchat2 = 0, prixVente2 = 0;
 
                                     Clarinette c = new Clarinette();
 
-                                    menuCreationInstrumentVent(nom2,prixAchat2,prixVente2,marque2,sc,c);
+                                    menuCreationInstrumentVent(nom2, prixAchat2, prixVente2, marque2, sc, c);
 
 
-                                    Clarinette clarinette = new Clarinette(c.getNom(),c.getPrixAchat(),c.getPrixVente(),c.getMarque());
+                                    Clarinette clarinette = new Clarinette(c.getNom(), c.getPrixAchat(), c.getPrixVente(), c.getMarque());
 
                                     instruments.add(clarinette);
 
@@ -972,14 +961,14 @@ public class Main {
 
                                     System.out.println("Flûte traversière");
 
-                                    String nom3 = null,marque3 = null;
-                                    double prixAchat3 = 0,prixVente3 = 0;
+                                    String nom3 = null, marque3 = null;
+                                    double prixAchat3 = 0, prixVente3 = 0;
 
                                     FluteTraversiere f = new FluteTraversiere();
 
-                                    menuCreationInstrumentVent(nom3,prixAchat3,prixVente3,marque3,sc,f);
+                                    menuCreationInstrumentVent(nom3, prixAchat3, prixVente3, marque3, sc, f);
 
-                                    FluteTraversiere fluteTraversiere = new  FluteTraversiere(f.getNom(),f.getPrixAchat(),f.getPrixVente(),f.getMarque());
+                                    FluteTraversiere fluteTraversiere = new FluteTraversiere(f.getNom(), f.getPrixAchat(), f.getPrixVente(), f.getMarque());
 
                                     instruments.add(fluteTraversiere);
 
@@ -1014,54 +1003,80 @@ public class Main {
 
                     System.out.println("5 : Association d'un locataire à un bien en location");
 
-                    if(batiments.size()==0){
+                    if (batiments.size() == 0) {
 
                         System.out.println("S'il vous plaît, veuillez créer au moins un immeuble ou hôtel pour effectuer cette opération.");
 
-                    }else{
+                    } else {
 
-                        int nbreHotel=0;
-                        int nbreIms=0;
+                        int nbreHotel = 0;
+                        int nbreIms = 0;
 
                         for (Batiment batiment : batiments) {
 
-                            if(batiment instanceof Hotel){
+                            if (batiment instanceof Hotel) {
                                 nbreHotel++;
                             }
 
-                            if(batiment instanceof Immeuble){
+                            if (batiment instanceof Immeuble) {
                                 nbreIms++;
 
                             }
 
                         }
 
-                        if(nbreIms==0 && nbreHotel==0){
+                        if (nbreIms == 0 && nbreHotel == 0) {
 
                             System.out.println(" La liste de bâtiments ne contient aucun immeuble ou hôtel. S'il vous plaît, veuillez créer au moins un immeuble ou hôtel pour effectuer cette opération.");
 
-                        }else{
+                        } else {
 
-                            if(nbreIms!=0 && nbreHotel==0){
+                            if (nbreIms != 0 && nbreHotel == 0) {
 
                                 System.out.println(" La liste de bâtiments ne contient aucun hôtel donc impossible d'y associer un locataire à une chambre ou suite. S'il vous plaît, veuillez créer au moins un hôtel si besoin.");
 
-                                System.out.println(" Par contre il y'a x immeubles donc c'est possible uniquement dans ce cas.");
+                                boolean pluriel = nbreIms > 1;
+
+                                String im = pluriel ? " immeubles" : " immeuble";
+
+                                String info = " Par contre il y'a  " + nbreIms + im + " donc c'est possible uniquement dans ce cas.";
+
+                                System.out.println(info);
+
+
+                                menuAssociationLocataireImmeuble(batiments, sc);
 
 
                             }
 
-                            if(nbreIms==0 && nbreHotel!=0){
+                            if (nbreIms == 0 && nbreHotel != 0) {
 
                                 System.out.println(" La liste de bâtiments ne contient aucun immeuble donc impossible d'y associer un locataire à un appartement. S'il vous plaît, veuillez créer au moins un immeuble si besoin.");
 
-                                System.out.println(" Par contre il y'a x hôtels donc c'est possible uniquement dans ce cas.");
+                                boolean pluriel = nbreHotel > 1;
 
+                                String h = pluriel ? " hôtels" : " hôtel";
+
+                                String info = " Par contre il y'a  " + nbreHotel + h + " donc c'est possible uniquement dans ce cas.";
+
+                                System.out.println(info);
+
+
+                                menuAssociationLocataireHotel(batiments, sc);
 
 
                             }
 
-                            if(nbreIms!=0 && nbreHotel!=0){
+                            if (nbreIms != 0 && nbreHotel != 0) {
+
+                                System.out.println("1: IMMEUBLE");
+
+                                menuAssociationLocataireImmeuble(batiments, sc);
+
+
+                                System.out.println("2: HOTEL");
+
+                                menuAssociationLocataireHotel(batiments, sc);
 
 
                             }
@@ -1074,16 +1089,153 @@ public class Main {
                     break;
 
                 case 6:
+
+                    System.out.println("Liste des biens d'un propriétaire");
+
+
+                    String nom;
+
+                    String prenom;
+
+
+                    boolean nomCorrect = true;
+
+                    do {
+
+
+                        System.out.println("Nom du propriétaire :");
+
+                        nom = sc.nextLine();
+
+                        if (nom.trim().isEmpty()) {
+
+                            nomCorrect = false;
+
+                            System.out.println("Entrez un nom correct");
+                        } else {
+
+                            nomCorrect = true;
+                        }
+
+
+                    } while (!nomCorrect);
+
+                    boolean prenomCorrect = true;
+
+                    do {
+
+
+                        System.out.println("Prénom du propriétaire :");
+
+                        prenom = sc.nextLine();
+
+                        if (prenom.trim().isEmpty()) {
+
+                            prenomCorrect = false;
+
+                            System.out.println("Entrez un prénom correct");
+                        } else {
+
+                            prenomCorrect = true;
+                        }
+
+
+                    } while (!prenomCorrect);
+
+                    String n = nom;
+                    String p = prenom;
+
+                    List<Batiment> biens = batiments.stream().filter(b -> b.getProprietaire().getNom().equals(n) && b.getProprietaire().getPrenom().equals(p)).collect(Collectors.toList());
+
+                    if (biens.size() == 0) {
+
+                        System.out.println("Cette personne n'a aucune bien");
+                    } else {
+
+                        biens.forEach(System.out::println);
+
+
+                    }
+
+
                     break;
 
                 case 7:
+                    System.out.println("Liste des appartements loués");
+
+
+                    if (batiments.size() == 0) {
+
+                        System.out.println("Liste Vide");
+                    }
+
+                    batiments.stream().forEach(b -> {
+
+                        if (b instanceof Immeuble) {
+
+                            Immeuble i = (Immeuble) b;
+
+                            appartementsLoues(i).forEach(System.out::println);
+
+
+                        }
+
+                    });
+
                     break;
 
 
                 case 8:
+
+                    System.out.println("Liste des chambres/suites disponibles");
+
+
+                    if (batiments.size() == 0) {
+
+                        System.out.println("Liste Vide");
+                    }
+
+                    batiments.stream().forEach(b -> {
+
+                        if (b instanceof Hotel) {
+
+                            Hotel h = (Hotel) b;
+
+                            System.out.println("Chambres");
+
+                            chambresDisponibles(h).forEach(System.out::println);
+
+                            System.out.println("Suites");
+
+                            suitesDisponibles(h).forEach(System.out::println);
+
+
+                        }
+
+                    });
                     break;
 
                 case 9:
+
+                    double impot = 0;
+
+                    System.out.println("Impôt local");
+
+
+                    if (batiments.size() == 0) {
+
+                        System.out.println("Liste de bâtiments de la résidence vide donc impôt nul. Veuillez créer des bâtiments");
+                    } else {
+
+
+                        impot = batiments.stream().mapToDouble(Batiment::getImpot).sum();
+
+                        System.out.println("L'impôt est  de : " + impot);
+
+
+                    }
+
+
                     break;
 
 
@@ -1097,7 +1249,6 @@ public class Main {
         }
 
     }
-
 
 
     public static boolean validationStringVersInt(String nbre, int min, int max) {
@@ -1263,25 +1414,25 @@ public class Main {
 
     private static MateriauCordeGuitare mapMateriauCordeGuitare(int i) {
 
-        if(i==1)
+        if (i == 1)
             return MateriauCordeGuitare.BOYAU;
 
-        if(i==2)
+        if (i == 2)
             return MateriauCordeGuitare.NYLON;
 
-        if(i==3)
+        if (i == 3)
             return MateriauCordeGuitare.FER;
 
-        if(i==4)
+        if (i == 4)
             return MateriauCordeGuitare.NICKEL;
 
-        if(i==5)
+        if (i == 5)
             return MateriauCordeGuitare.BRONZE;
 
-        if(i==6)
+        if (i == 6)
             return MateriauCordeGuitare.CUIVRE;
 
-        if(i==7)
+        if (i == 7)
             return MateriauCordeGuitare.OR;
 
 
@@ -1291,11 +1442,267 @@ public class Main {
 
     private static boolean mapToBoolean(int i) {
 
-        if (i == 1)
-            return true;
+        return i == 1;
 
 
-        return false;
+    }
+
+    private static boolean ouiNon(Scanner sc) {
+
+        System.out.println("1: OUI");
+
+        System.out.println("2: NON");
+
+
+        String optionString;
+
+
+        do {
+            System.out.println("Faites votre choix en entrant une valeur comprise entre  1 et 2");
+
+            optionString = sc.nextLine();
+
+        } while (!validationStringVersInt(optionString, 1, 2));
+
+
+        int optionInt = Integer.parseInt(optionString);
+
+
+        boolean option = mapToBoolean(optionInt);
+
+
+        return option;
+    }
+
+    private static Locataire menuLocataire(Scanner sc) {
+
+        System.out.println("Création d'un nouveau locataire");
+
+        String nom;
+
+        String prenom;
+
+
+        boolean nomCorrect = true;
+
+        do {
+
+
+            System.out.println("Nom du locataire :");
+
+            nom = sc.nextLine();
+
+            if (nom.trim().isEmpty()) {
+
+                nomCorrect = false;
+
+                System.out.println("Entrez un nom correct");
+            } else {
+
+                nomCorrect = true;
+            }
+
+
+        } while (!nomCorrect);
+
+        boolean prenomCorrect = true;
+
+        do {
+
+
+            System.out.println("Prénom du locataire :");
+
+            prenom = sc.nextLine();
+
+            if (prenom.trim().isEmpty()) {
+
+                prenomCorrect = false;
+
+                System.out.println("Entrez un prénom correct");
+            } else {
+
+                prenomCorrect = true;
+            }
+
+
+        } while (!prenomCorrect);
+
+
+        Locataire l = new Locataire(nom, prenom);
+
+        return l;
+    }
+
+    private static void menuAssociationLocataireImmeuble(List<Batiment> batiments, Scanner sc) {
+
+
+        List<Immeuble> immeubles = new ArrayList<>();
+
+        batiments.stream().forEach(b -> {
+            if (b instanceof Immeuble) {
+
+                immeubles.add((Immeuble) b);
+            }
+
+        });
+
+        for (int i = 0; i < immeubles.size(); i++) {
+
+            int n = immeubles.get(i).getAppartements().size();
+
+            System.out.println("Cette immeuble Nº " + (i + 1) + " contient  " + n + " appartement(s)");
+
+            for (int j = 0; j < n; j++) {
+
+
+                Appartement a = immeubles.get(i).getAppartements().get(j);
+
+                if (a.getLocataire() == null) {
+
+                    System.out.println("Cet appartement Nº " + (j + 1) + " n'est pas encore loué.");
+
+                    System.out.println("Souhaitez vous louer ?");
+
+                    boolean vouloirLouer = ouiNon(sc);
+
+                    if (vouloirLouer) {
+
+                        Locataire l = menuLocataire(sc);
+
+
+                        try {
+                            a.bail(l);
+                        } catch (RuntimeException e) {
+                            System.out.println(e.getMessage());
+                        }
+
+                    }
+
+                } else {
+
+                    System.out.println("Cet appartement  Nº " + (j + 1) + "est déjà loué.");
+
+
+                }
+
+
+            }
+
+
+        }
+
+    }
+
+    private static void menuAssociationLocataireHotel(List<Batiment> batiments, Scanner sc) {
+
+        List<Hotel> hotels = new ArrayList<>();
+
+        batiments.stream().forEach(b -> {
+            if (b instanceof Hotel) {
+
+                hotels.add((Hotel) b);
+            }
+
+        });
+
+        for (int i = 0; i < hotels.size(); i++) {
+
+            System.out.println("-------Location de Chambres-------");
+
+            int n = hotels.get(i).getChambres().size();
+
+            System.out.println("Cet hôtel Nº " + (i + 1) + " contient  " + n + " chambre(s)");
+
+            for (int j = 0; j < n; j++) {
+
+
+                Chambre c = hotels.get(i).getChambres().get(j);
+
+                if (c.getLocataire() == null) {
+
+                    System.out.println("Cette chambre  Nº " + (j + 1) + " n'est pas encore louée.");
+
+                    System.out.println("Souhaitez vous louer ?");
+
+                    boolean vouloirLouer = ouiNon(sc);
+
+                    if (vouloirLouer) {
+
+                        Locataire l = menuLocataire(sc);
+
+
+                        try {
+                            c.bail(l);
+                        } catch (RuntimeException e) {
+                            System.out.println(e.getMessage());
+                        }
+
+                    }
+
+                } else {
+
+                    System.out.println("Cette chambre  Nº " + (j + 1) + "est déjà louée.");
+
+
+                }
+
+
+            }
+
+            System.out.println("-------Location de Suites-------");
+
+            if (hotels.get(i).getNbreEtoiles().equals(Etoile.CINQ)) {
+
+                int s = hotels.get(i).getSuites().size();
+
+                System.out.println("Cet hôtel Nº " + (i + 1) + " contient  " + s + " suite(s)");
+
+                for (int k = 0; k < s; k++) {
+
+
+                    Suite suite = hotels.get(i).getSuites().get(k);
+
+                    if (suite.getLocataire() == null) {
+
+                        System.out.println("Cette suite  Nº " + (k + 1) + " n'est pas encore louée.");
+
+                        System.out.println("Souhaitez vous louer ?");
+
+                        boolean vouloirLouer = ouiNon(sc);
+
+                        if (vouloirLouer) {
+
+                            Locataire l = menuLocataire(sc);
+
+
+                            try {
+                                suite.bail(l);
+                            } catch (RuntimeException e) {
+                                System.out.println(e.getMessage());
+                            }
+
+                        }
+
+                    } else {
+
+                        System.out.println("Cette suite  Nº " + (k + 1) + "est déjà louée.");
+
+
+                    }
+
+
+                }
+
+
+            } else {
+
+                System.out.println("Impossible de louer une suite car cet hôtel Nº " + (i + 1) + " n'est pas 5 étoile.");
+
+
+            }
+
+
+        }
 
 
     }
@@ -1461,7 +1868,59 @@ public class Main {
 
                 hotel.setNbreEtoiles(etoileHotel);
 
-                batiments.add(new Hotel(hotel.getAdresse(), hotel.getSurfaceHabitable(), hotel.getCapaciteHoteliere(), hotel.getNbreEtoiles()));
+                Hotel h = new Hotel(hotel.getAdresse(), hotel.getSurfaceHabitable(), hotel.getCapaciteHoteliere(), hotel.getNbreEtoiles());
+
+                System.out.println("Suites");
+
+                if (h.getNbreEtoiles().equals(Etoile.CINQ)) {
+
+                    boolean nbreSuitesCorrect = true;
+
+                    int nbreSuites = 0;
+
+                    do {
+
+
+                        try {
+
+
+                            System.out.println("Nombre de suites de l'hôtel (supérieure à 0) :");
+
+                            String nbreSuitesString = sc.nextLine();
+
+                            nbreSuites = Integer.parseInt(nbreSuitesString.trim());
+
+                            nbreSuitesCorrect = nbreSuites > 0;
+
+                            if (!nbreSuitesCorrect)
+                                System.out.println("Entrez un nombre de suites correct");
+
+
+                        } catch (NumberFormatException e) {
+
+                            nbreSuitesCorrect = false;
+
+                            System.out.println("Entrez un nombre de suites correct");
+                        }
+
+
+                    } while (!nbreSuitesCorrect);
+
+
+                    for (int i = 0; i < nbreSuites; i++) {
+
+                        h.addSuite(new Suite());
+
+                    }
+
+
+                } else {
+
+                    System.out.println("Impossible d'ajouter une suite car cet hôtel n'a pas 5 étoiles.");
+
+                }
+
+                batiments.add(h);
 
 
                 break;
@@ -1956,7 +2415,59 @@ public class Main {
 
                 hotel.setNbreEtoiles(etoileHotel);
 
-                batiments.add(new Hotel(hotel.getAdresse(), hotel.getSurfaceHabitable(), proprietaire, hotel.getCapaciteHoteliere(), hotel.getNbreEtoiles()));
+                Hotel h = new Hotel(hotel.getAdresse(), hotel.getSurfaceHabitable(), proprietaire, hotel.getCapaciteHoteliere(), hotel.getNbreEtoiles());
+
+                System.out.println("Suites");
+
+                if (h.getNbreEtoiles().equals(Etoile.CINQ)) {
+
+                    boolean nbreSuitesCorrect = true;
+
+                    int nbreSuites = 0;
+
+                    do {
+
+
+                        try {
+
+
+                            System.out.println("Nombre de suites de l'hôtel (supérieure à 0) :");
+
+                            String nbreSuitesString = sc.nextLine();
+
+                            nbreSuites = Integer.parseInt(nbreSuitesString.trim());
+
+                            nbreSuitesCorrect = nbreSuites > 0;
+
+                            if (!nbreSuitesCorrect)
+                                System.out.println("Entrez un nombre de suites correct");
+
+
+                        } catch (NumberFormatException e) {
+
+                            nbreSuitesCorrect = false;
+
+                            System.out.println("Entrez un nombre de suites correct");
+                        }
+
+
+                    } while (!nbreSuitesCorrect);
+
+
+                    for (int i = 0; i < nbreSuites; i++) {
+
+                        h.addSuite(new Suite());
+
+                    }
+
+
+                } else {
+
+                    System.out.println("Impossible d'ajouter une suite car cet hôtel n'a pas 5 étoiles.");
+
+                }
+
+                batiments.add(h);
 
                 break;
 
@@ -2289,7 +2800,7 @@ public class Main {
         }
     }
 
-    private static void menuCreationInstrumentVent(String nom, double prixAchat, double prixVente, String marque,Scanner sc,InstrumentAVent instrumentAVent) {
+    private static void menuCreationInstrumentVent(String nom, double prixAchat, double prixVente, String marque, Scanner sc, InstrumentAVent instrumentAVent) {
 
         boolean nomCorrect = true;
 
@@ -2313,7 +2824,7 @@ public class Main {
 
         } while (!nomCorrect);
 
-instrumentAVent.setNom(nom);
+        instrumentAVent.setNom(nom);
 
         boolean prixAchatCorrect = true;
 
@@ -2375,7 +2886,7 @@ instrumentAVent.setNom(nom);
 
         } while (!prixVenteCorrect);
 
-instrumentAVent.setPrixVente(prixVente);
+        instrumentAVent.setPrixVente(prixVente);
 
 
         boolean marqueCorrect = true;
@@ -2401,7 +2912,7 @@ instrumentAVent.setPrixVente(prixVente);
         } while (!marqueCorrect);
 
 
-instrumentAVent.setMarque(marque);
+        instrumentAVent.setMarque(marque);
     }
 
     private static void menuCreationGuitare(Guitare guitare, Scanner sc) {
@@ -2624,7 +3135,7 @@ instrumentAVent.setMarque(marque);
 
     private static void menuCreationGuitareAcoustique(GuitareAcoustique guitare, Scanner sc) {
 
-        menuCreationGuitare(guitare,sc);
+        menuCreationGuitare(guitare, sc);
 
         System.out.println("Main Habile:");
 
@@ -2677,7 +3188,7 @@ instrumentAVent.setMarque(marque);
 
     private static void menuCreationGuitareElectrique(GuitareElectrique guitare, Scanner sc) {
 
-        menuCreationGuitare(guitare,sc);
+        menuCreationGuitare(guitare, sc);
 
 
         System.out.println("Avec Amplificateur:");
