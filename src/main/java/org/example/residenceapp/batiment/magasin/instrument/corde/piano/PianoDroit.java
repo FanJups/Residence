@@ -8,6 +8,10 @@ public class PianoDroit extends Piano {
     private boolean etreDoteSilencieux;
 
 
+    public PianoDroit(){
+
+    }
+
     public PianoDroit(String nom, double prixAchat, double prixVente, String marque, double longueur, double largeur, int nombreTouche,
                       TypeCordesPianoDroit typeCordesPianoDroit, boolean etreDoteSilencieux) {
         super(nom, prixAchat, prixVente, marque, longueur, largeur, nombreTouche);

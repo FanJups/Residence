@@ -12,6 +12,10 @@ public abstract class Guitare extends InstrumentACorde {
         this.materiauCordeGuitare = materiauCordeGuitare;
     }
 
+    public Guitare() {
+
+    }
+
     public MateriauCordeGuitare getMateriauCordeGuitare() {
         return materiauCordeGuitare;
     }

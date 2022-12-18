@@ -6,6 +6,13 @@ public class PianoQueue extends Piano {
 
     private TaillePianoQueue taille;
 
+
+    public PianoQueue(){
+        super();
+
+
+    }
+
     public PianoQueue(String nom, double prixAchat, double prixVente, String marque, double longueur, double largeur, int nombreTouche,
                       TaillePianoQueue taille) {
         super(nom, prixAchat, prixVente, marque, longueur, largeur, nombreTouche);

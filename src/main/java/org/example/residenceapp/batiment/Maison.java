@@ -6,6 +6,8 @@ public class Maison extends Batiment {
     private int nombrePiece;
     private double surfaceJardin;
 
+    public Maison(){super();}
+
     public Maison(String adresse, double surfaceHabitable, Proprietaire proprietaire, int nombrePiece, double surfaceJardin) {
 
         super(adresse, surfaceHabitable, proprietaire);

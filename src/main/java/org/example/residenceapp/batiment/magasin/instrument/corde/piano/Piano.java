@@ -16,6 +16,10 @@ public abstract class Piano extends InstrumentACorde {
 
     }
 
+    public Piano() {
+        super();
+    }
+
     public int getNombreTouche() {
         return nombreTouche;
     }

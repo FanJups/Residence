@@ -7,11 +7,16 @@ public abstract class Instrument {
 
     private String marque;
 
+
     public Instrument(String nom, double prixAchat, double prixVente, String marque) {
         this.nom = nom;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
         this.marque = marque;
+    }
+
+    public Instrument() {
+
     }
 
     public String getNom() {

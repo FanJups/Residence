@@ -13,6 +13,8 @@ public class Chambre extends Location {
 
     }
 
+
+
     public Chambre(Locataire locataire) {
 
         super(locataire);

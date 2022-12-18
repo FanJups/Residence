@@ -4,6 +4,10 @@ import org.example.residenceapp.batiment.magasin.instrument.vent.utils.TypeInstr
 
 public class Hautbois extends InstrumentAVent {
 
+    public Hautbois(){
+
+    }
+
     public Hautbois(String nom, double prixAchat, double prixVente, String marque) {
 
         super(nom, prixAchat, prixVente, marque, TypeInstrumentAVent.ANCHE_DOUBLE);

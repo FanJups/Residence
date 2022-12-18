@@ -7,6 +7,10 @@ public class PianoNumerique extends Piano {
     //  Valeurs possibles 1,2 ou 3
     private int qualiteEchantillonnage;
 
+    public PianoNumerique(){
+
+    }
+
 
     public PianoNumerique(String nom, double prixAchat, double prixVente, String marque, double longueur, double largeur, int nombreTouche, boolean avoirToucherLourd, int qualiteEchantillonnage) {
         super(nom, prixAchat, prixVente, marque, longueur, largeur, nombreTouche);

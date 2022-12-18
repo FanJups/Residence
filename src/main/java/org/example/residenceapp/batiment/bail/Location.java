@@ -24,7 +24,7 @@ public abstract class Location {
         return "\n" +
                 "Location {" +
                 "\n" +
-                "locataire = " + locataire +
+                "locataire = " + locataire ==null?"Aucun":locataire +
                 "\n" +
                 '}' +
                 "\n";

@@ -13,6 +13,8 @@ public class Magasin extends Batiment {
 
     private List<Instrument> instruments = new ArrayList<>();
 
+    public Magasin(){super();}
+
     public Magasin(String adresse, double surfaceHabitable, Proprietaire proprietaire) {
 
         super(adresse, surfaceHabitable, proprietaire);

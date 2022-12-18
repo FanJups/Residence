@@ -15,6 +15,10 @@ public abstract class InstrumentACorde extends Instrument {
         this.largeur = largeur;
     }
 
+    public InstrumentACorde() {
+        super();
+    }
+
     public double getLongueur() {
         return longueur;
     }

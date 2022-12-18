@@ -12,6 +12,10 @@ public class GuitareElectrique extends Guitare {
         this.pedalesEffetsSonores = pedalesEffetsSonores;
     }
 
+    public GuitareElectrique() {
+
+    }
+
     public boolean isAmplificateurInclus() {
         return amplificateurInclus;
     }

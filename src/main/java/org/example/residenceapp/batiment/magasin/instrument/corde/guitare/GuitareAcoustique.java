@@ -9,6 +9,11 @@ public class GuitareAcoustique extends Guitare {
 
     private int tirant;
 
+    public GuitareAcoustique(){
+        super();
+
+    }
+
     public GuitareAcoustique(String nom, double prixAchat, double prixVente, String marque, double longueur, double largeur, MateriauCordeGuitare materiauCordeGuitare, MainHabile mainHabile, int tirant) {
         super(nom, prixAchat, prixVente, marque, longueur, largeur, materiauCordeGuitare);
         this.mainHabile = mainHabile;

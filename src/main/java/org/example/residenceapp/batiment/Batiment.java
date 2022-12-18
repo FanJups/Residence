@@ -11,7 +11,7 @@ public abstract class Batiment {
     private Proprietaire proprietaire;
 
 
-    public Batiment(String adresse, double surfaceHabitable, Proprietaire proprietaire) {
+    protected Batiment(String adresse, double surfaceHabitable, Proprietaire proprietaire) {
 
 
         this.adresse = adresse;
@@ -22,12 +22,16 @@ public abstract class Batiment {
 
     }
 
-    public Batiment(String adresse, double surfaceHabitable) {
+    protected Batiment(String adresse, double surfaceHabitable) {
 
         this.adresse = adresse;
         this.surfaceHabitable = surfaceHabitable;
 
         Residence.addBatiment(this);
+
+    }
+
+    protected Batiment() {
 
     }
 
@@ -68,7 +72,7 @@ public abstract class Batiment {
                 "\n" +
                 " surfaceHabitable = " + surfaceHabitable +
                 "\n" +
-                " proprietaire = " + proprietaire +
+                " proprietaire = " + proprietaire==null?"Aucun":proprietaire +
                 "\n" +
                 " impot = " + getImpot() +
                 "\n" +

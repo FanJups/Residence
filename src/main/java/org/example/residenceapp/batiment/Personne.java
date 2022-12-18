@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Personne {
 
-    public static int nombreTotalPersonnes = 0;
+    static int nombreTotalPersonnes = 0;
 
     private int idPersonne;
     private String nom;

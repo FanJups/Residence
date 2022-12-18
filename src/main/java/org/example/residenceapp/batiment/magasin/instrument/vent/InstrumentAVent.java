@@ -7,6 +7,10 @@ public abstract class InstrumentAVent extends Instrument {
 
     private TypeInstrumentAVent typeVent;
 
+    public InstrumentAVent(){
+
+    }
+
     public InstrumentAVent(String nom, double prixAchat, double prixVente, String marque, TypeInstrumentAVent typeVent) {
 
         super(nom, prixAchat, prixVente, marque);

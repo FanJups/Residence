@@ -2,6 +2,7 @@ package org.example.residenceapp.batiment.immeuble;
 
 import org.example.residenceapp.batiment.Batiment;
 import org.example.residenceapp.batiment.Proprietaire;
+import org.example.residenceapp.batiment.hotel.Chambre;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +15,25 @@ public class Immeuble extends Batiment {
 
     private List<Appartement> appartements = new ArrayList<>();
 
+    public Immeuble(){super();}
+
 
     public Immeuble(String adresse, double surfaceHabitable, Proprietaire proprietaire, int nombreAppartement) {
         super(adresse, surfaceHabitable, proprietaire);
-        this.nombreAppartement = nombreAppartement;
+        setNombreAppartement(nombreAppartement);
+
+        for (int i = 0; i < this.nombreAppartement; i++) {
+            appartements.add(new Appartement(null,this));
+        }
     }
 
     public Immeuble(String adresse, double surfaceHabitable, int nombreAppartement) {
         super(adresse, surfaceHabitable);
-        this.nombreAppartement = nombreAppartement;
+        setNombreAppartement(nombreAppartement);
+
+        for (int i = 0; i < this.nombreAppartement; i++) {
+            appartements.add(new Appartement(null,this));
+        }
     }
 
     public int getNombreAppartement() {
@@ -30,7 +41,17 @@ public class Immeuble extends Batiment {
     }
 
     public void setNombreAppartement(int nombreAppartement) {
-        this.nombreAppartement = nombreAppartement;
+
+        if (nombreAppartement > 0) {
+
+            this.nombreAppartement = nombreAppartement;
+
+        } else {
+
+            throw new RuntimeException("L'immeuble doit avoir minimum un appartment.");
+
+        }
+
     }
 
     public List<Appartement> getAppartements() {

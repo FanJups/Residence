@@ -4,6 +4,11 @@ import org.example.residenceapp.batiment.magasin.instrument.vent.utils.TypeInstr
 
 public class Clarinette extends InstrumentAVent {
 
+    public Clarinette(){
+
+    }
+
+
     public Clarinette(String nom, double prixAchat, double prixVente, String marque) {
 
         super(nom, prixAchat, prixVente, marque, TypeInstrumentAVent.ANCHE_SIMPLE);

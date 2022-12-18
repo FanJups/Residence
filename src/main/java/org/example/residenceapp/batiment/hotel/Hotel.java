@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class Hotel extends Batiment {
 
-    private int nombreChambre;
+    private int capaciteHoteliere;
 
     private List<Chambre> chambres = new ArrayList<>();
 
@@ -26,27 +26,39 @@ public class Hotel extends Batiment {
     private Etoile nbreEtoiles;
 
 
-    public Hotel(String adresse, double surfaceHabitable, Proprietaire proprietaire, int nombreChambre, Etoile nbreEtoiles) {
+    public Hotel(){
+        super();
+
+    }
+
+
+    public Hotel(String adresse, double surfaceHabitable, Proprietaire proprietaire, int capaciteHoteliere, Etoile nbreEtoiles) {
         super(adresse, surfaceHabitable, proprietaire);
-        setNombreChambre(nombreChambre);
+        setCapaciteHoteliere(capaciteHoteliere);
+        for (int i = 0; i < capaciteHoteliere; i++) {
+            chambres.add(new Chambre(null,this));
+        }
         this.nbreEtoiles = nbreEtoiles;
     }
 
-    public Hotel(String adresse, double surfaceHabitable, int nombreChambre, Etoile nbreEtoiles) {
+    public Hotel(String adresse, double surfaceHabitable, int capaciteHoteliere, Etoile nbreEtoiles) {
         super(adresse, surfaceHabitable);
-        setNombreChambre(nombreChambre);
+        setCapaciteHoteliere(capaciteHoteliere);
+        for (int i = 0; i < capaciteHoteliere; i++) {
+            chambres.add(new Chambre(null,this));
+        }
         this.nbreEtoiles = nbreEtoiles;
     }
 
-    public int getNombreChambre() {
-        return nombreChambre;
+    public int getCapaciteHoteliere() {
+        return capaciteHoteliere;
     }
 
-    public void setNombreChambre(int nombreChambre) {
+    public void setCapaciteHoteliere(int capaciteHoteliere) {
 
-        if (nombreChambre > 0) {
+        if (capaciteHoteliere > 0) {
 
-            this.nombreChambre = nombreChambre;
+            this.capaciteHoteliere = capaciteHoteliere;
 
         } else {
 
@@ -65,7 +77,7 @@ public class Hotel extends Batiment {
 
         Objects.requireNonNull(chambre);
 
-        if (chambres.size() < nombreChambre) {
+        if (chambres.size() < capaciteHoteliere) {
 
 
             chambre.setHotel(this);
@@ -198,7 +210,7 @@ public class Hotel extends Batiment {
                 "\n" +
                 "nbreEtoiles = " + nbreEtoiles +
                 "\n" +
-                "nombreChambre théorique = " + nombreChambre +
+                "capaciteHoteliere = " + capaciteHoteliere +
                 "\n" +
                 "nombreChambre réel = " + chambres.size() +
                 "\n" +
