@@ -40,7 +40,7 @@ public class Main {
 
         menu();
 
-        application();
+        //application();
 
     }
 
@@ -1145,11 +1145,14 @@ public class Main {
                     String n = nom;
                     String p = prenom;
 
-                    List<Batiment> biens = batiments.stream().filter(b -> b.getProprietaire().getNom().equals(n) && b.getProprietaire().getPrenom().equals(p)).collect(Collectors.toList());
+                    List<Batiment> biens = batiments.stream()
+                            .filter(b -> b.getProprietaire().getNom().equals(n)
+                                    && b.getProprietaire().getPrenom().equals(p))
+                            .collect(Collectors.toList());
 
                     if (biens.size() == 0) {
 
-                        System.out.println("Cette personne n'a aucune bien");
+                        System.out.println("Cette personne n'a aucun bien");
                     } else {
 
                         biens.forEach(System.out::println);

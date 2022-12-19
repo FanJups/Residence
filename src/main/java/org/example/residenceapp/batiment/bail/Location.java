@@ -21,10 +21,12 @@ public abstract class Location {
 
     @Override
     public String toString() {
+
+        String infoLocataire = locataire ==null?"Aucun":locataire.toString();
         return "\n" +
                 "Location {" +
                 "\n" +
-                "locataire = " + locataire ==null?"Aucun":locataire +
+                "locataire = " + infoLocataire +
                 "\n" +
                 '}' +
                 "\n";
